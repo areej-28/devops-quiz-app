@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "topic": "Git",
+    "question": "What does git clone do?",
+    "options": ["Creates a local copy of a remote repo", "Deletes a branch", "Uploads commits", "Creates a merge conflict"],
+    "answerIndex": 0,
+    "explanation": "git clone downloads a repository from a remote source to your computer."
+  }
+]
