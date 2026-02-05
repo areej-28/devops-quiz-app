@@ -1,120 +1,29 @@
-let questions = [];
-let currentQuestion = null;
-let selectedIndex = -1;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Quiz App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>DevOps Quiz App</h1>
 
-let topicSelect = document.getElementById("topicSelect");
-let questionText = document.getElementById("questionText");
-let optionsBox = document.getElementById("optionsBox");
-let feedback = document.getElementById("feedback");
+  <label for="topicSelect">Choose topic:</label>
+  <select id="topicSelect">
+    <option value="">All Topics</option>
+  </select>
 
-let startBtn = document.getElementById("startBtn");
-let submitBtn = document.getElementById("submitBtn");
-let nextBtn = document.getElementById("nextBtn");
+  <div id="quizBox">
+    <h2 id="questionText">Click Start</h2>
+    <div id="optionsBox"></div>
+    <p id="feedback"></p>
 
-function loadQuestions() {
-  return fetch("data/questions.json")
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      questions = data;
-      fillTopics();
-    });
-}
+    <button id="startBtn">Start</button>
+    <button id="submitBtn" disabled>Submit</button>
+    <button id="nextBtn" disabled>Next</button>
+  </div>
 
-function fillTopics() {
-  let topics = [];
-  for (let i = 0; i < questions.length; i++) {
-    if (topics.indexOf(questions[i].topic) === -1) {
-      topics.push(questions[i].topic);
-    }
-  }
-
-  for (let j = 0; j < topics.length; j++) {
-    let opt = document.createElement("option");
-    opt.value = topics[j];
-    opt.textContent = topics[j];
-    topicSelect.appendChild(opt);
-  }
-}
-
-function getFilteredQuestions() {
-  let chosen = topicSelect.value;
-  if (chosen === "") {
-    return questions;
-  }
-
-  let filtered = [];
-  for (let i = 0; i < questions.length; i++) {
-    if (questions[i].topic === chosen) {
-      filtered.push(questions[i]);
-    }
-  }
-  return filtered;
-}
-
-function showRandomQuestion() {
-  feedback.textContent = "";
-  selectedIndex = -1;
-  optionsBox.innerHTML = "";
-
-  let pool = getFilteredQuestions();
-  if (pool.length === 0) {
-    questionText.textContent = "No questions for this topic.";
-    submitBtn.disabled = true;
-    nextBtn.disabled = true;
-    return;
-  }
-
-  let r = Math.floor(Math.random() * pool.length);
-  currentQuestion = pool[r];
-
-  questionText.textContent = currentQuestion.question;
-
-  for (let i = 0; i < currentQuestion.options.length; i++) {
-    let label = document.createElement("label");
-    let radio = document.createElement("input");
-
-    radio.type = "radio";
-    radio.name = "opt";
-    radio.value = i;
-
-    radio.addEventListener("change", function() {
-      selectedIndex = parseInt(this.value);
-      submitBtn.disabled = false;
-    });
-
-    label.appendChild(radio);
-    label.appendChild(document.createTextNode(" " + currentQuestion.options[i]));
-    optionsBox.appendChild(label);
-    optionsBox.appendChild(document.createElement("br"));
-  }
-
-  submitBtn.disabled = true;
-  nextBtn.disabled = true;
-}
-
-startBtn.addEventListener("click", function() {
-  loadQuestions().then(function() {
-    showRandomQuestion();
-  });
-});
-
-submitBtn.addEventListener("click", function() {
-  if (selectedIndex === -1) {
-    return;
-  }
-
-  if (selectedIndex === currentQuestion.answerIndex) {
-    feedback.textContent = "Correct! " + currentQuestion.explanation;
-  } else {
-    feedback.textContent = "Wrong. " + currentQuestion.explanation;
-  }
-
-  nextBtn.disabled = false;
-  submitBtn.disabled = true;
-});
-
-nextBtn.addEventListener("click", function() {
-  showRandomQuestion();
-});
+  <script src="app.js"></script>
+</body>
+</html>
