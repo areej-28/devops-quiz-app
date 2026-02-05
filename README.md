@@ -1,2 +1,2 @@
-Team line: Version B
+Team line: Version A + Version B
 
