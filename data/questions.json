@@ -6,10 +6,260 @@
     "options": [
       "Creates a local copy of a remote repository",
       "Deletes a repository",
-      "Uploads files to GitHub",
-      "Creates a branch"
+      "Uploads commits to a remote",
+      "Creates a merge conflict"
     ],
     "answerIndex": 0,
     "explanation": "git clone downloads a remote repository to your computer."
+  },
+  {
+    "id": 2,
+    "topic": "Git",
+    "question": "What is the purpose of git commit?",
+    "options": [
+      "Save a snapshot of staged changes in the local repository",
+      "Upload changes directly to GitHub",
+      "Delete old branches",
+      "Reset your working directory automatically"
+    ],
+    "answerIndex": 0,
+    "explanation": "git commit creates a local snapshot from what you staged with git add."
+  },
+  {
+    "id": 3,
+    "topic": "Git",
+    "question": "What does git pull usually do?",
+    "options": [
+      "Fetches remote changes and merges them into your current branch",
+      "Only uploads your changes to remote",
+      "Deletes remote branches",
+      "Creates a new repository"
+    ],
+    "answerIndex": 0,
+    "explanation": "git pull is typically fetch + merge for the current branch."
+  },
+  {
+    "id": 4,
+    "topic": "Git",
+    "question": "Why do teams use branches in Git?",
+    "options": [
+      "To work on features safely without breaking main",
+      "To make repositories larger",
+      "To avoid writing commit messages",
+      "To prevent code reviews"
+    ],
+    "answerIndex": 0,
+    "explanation": "Branches isolate work so main stays stable and merging can be reviewed."
+  },
+  {
+    "id": 5,
+    "topic": "Git",
+    "question": "What does a pull request (PR) help with?",
+    "options": [
+      "Code review and controlled merging into main",
+      "Automatically fixing all bugs",
+      "Stopping merges forever",
+      "Replacing version control"
+    ],
+    "answerIndex": 0,
+    "explanation": "PRs allow review, discussion, and safer merging."
+  },
+
+  {
+    "id": 6,
+    "topic": "CI/CD",
+    "question": "What is the main goal of Continuous Integration (CI)?",
+    "options": [
+      "Integrate changes frequently and detect issues early",
+      "Deploy to production every hour",
+      "Remove the need for testing",
+      "Stop developers from committing"
+    ],
+    "answerIndex": 0,
+    "explanation": "CI focuses on frequent integration plus automated builds/tests to catch problems early."
+  },
+  {
+    "id": 7,
+    "topic": "CI/CD",
+    "question": "Which is a common CI step?",
+    "options": [
+      "Run automated tests on each push",
+      "Manually edit production database",
+      "Skip builds to save time",
+      "Disable version control"
+    ],
+    "answerIndex": 0,
+    "explanation": "CI commonly runs builds and tests automatically when code changes."
+  },
+  {
+    "id": 8,
+    "topic": "CI/CD",
+    "question": "What does Continuous Delivery usually mean?",
+    "options": [
+      "Code is always in a deployable state, deployment can be triggered easily",
+      "Every change is deployed automatically without approval",
+      "Only manual testing is allowed",
+      "No staging environment is needed"
+    ],
+    "answerIndex": 0,
+    "explanation": "Continuous Delivery keeps software deployable; you can choose when to deploy."
+  },
+  {
+    "id": 9,
+    "topic": "CI/CD",
+    "question": "What is the benefit of using a pipeline?",
+    "options": [
+      "Repeatable automated steps for build, test, and deploy",
+      "More manual work for developers",
+      "Slower releases by design",
+      "No need for versioning"
+    ],
+    "answerIndex": 0,
+    "explanation": "Pipelines standardize and automate the process to reduce human error."
+  },
+  {
+    "id": 10,
+    "topic": "CI/CD",
+    "question": "Why are automated tests important in CI?",
+    "options": [
+      "They catch issues early before code reaches production",
+      "They replace the need for code reviews",
+      "They guarantee zero bugs forever",
+      "They make git unnecessary"
+    ],
+    "answerIndex": 0,
+    "explanation": "Automated tests reduce risk by detecting regressions early."
+  },
+
+  {
+    "id": 11,
+    "topic": "Docker",
+    "question": "What is a Docker image?",
+    "options": [
+      "A packaged template that includes app and dependencies",
+      "A running container",
+      "A cloud database service",
+      "A Git branch"
+    ],
+    "answerIndex": 0,
+    "explanation": "An image is the blueprint; containers are created from images."
+  },
+  {
+    "id": 12,
+    "topic": "Docker",
+    "question": "What is a Docker container?",
+    "options": [
+      "A running instance of an image",
+      "A source code repository",
+      "A type of firewall rule",
+      "A test report file"
+    ],
+    "answerIndex": 0,
+    "explanation": "A container is a running environment created from a Docker image."
+  },
+  {
+    "id": 13,
+    "topic": "Docker",
+    "question": "Why use containers in DevOps?",
+    "options": [
+      "To run apps consistently across different machines",
+      "To avoid writing any documentation",
+      "To replace all operating systems",
+      "To remove the need for networking"
+    ],
+    "answerIndex": 0,
+    "explanation": "Containers package the app with dependencies, improving consistency and portability."
+  },
+  {
+    "id": 14,
+    "topic": "Docker",
+    "question": "Which file commonly defines how to build a Docker image?",
+    "options": [
+      "Dockerfile",
+      "README.md",
+      "package.json only",
+      ".gitignore"
+    ],
+    "answerIndex": 0,
+    "explanation": "A Dockerfile contains instructions to build an image."
+  },
+  {
+    "id": 15,
+    "topic": "Docker",
+    "question": "What is one key difference between a container and a virtual machine (VM)?",
+    "options": [
+      "Containers share the host OS kernel while VMs include a full guest OS",
+      "Containers always use more RAM than VMs",
+      "VMs cannot be used in the cloud",
+      "Containers require no files at all"
+    ],
+    "answerIndex": 0,
+    "explanation": "Containers are lighter because they share the host kernel; VMs package an entire OS."
+  },
+
+  {
+    "id": 16,
+    "topic": "Monitoring",
+    "question": "What is monitoring in DevOps?",
+    "options": [
+      "Tracking system/app health and performance over time",
+      "Writing code without testing",
+      "Only checking logs once a month",
+      "Disabling alerts to reduce noise"
+    ],
+    "answerIndex": 0,
+    "explanation": "Monitoring helps detect issues early through metrics, alerts, and dashboards."
+  },
+  {
+    "id": 17,
+    "topic": "Monitoring",
+    "question": "Which is an example of a metric you might monitor?",
+    "options": [
+      "CPU usage",
+      "Repository name",
+      "Branch color",
+      "Folder icon"
+    ],
+    "answerIndex": 0,
+    "explanation": "CPU usage is a common system metric used to spot performance problems."
+  },
+  {
+    "id": 18,
+    "topic": "Monitoring",
+    "question": "What is logging mainly used for?",
+    "options": [
+      "Understanding events and errors by recording messages over time",
+      "Replacing backups",
+      "Speeding up internet connections",
+      "Deleting old metrics automatically"
+    ],
+    "answerIndex": 0,
+    "explanation": "Logs capture events and errors, helping debugging and incident investigation."
+  },
+  {
+    "id": 19,
+    "topic": "Monitoring",
+    "question": "Why are alerts important?",
+    "options": [
+      "They notify you quickly when something goes wrong",
+      "They make servers faster",
+      "They prevent all outages automatically",
+      "They replace incident reports"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alerts reduce response time by notifying teams when thresholds or failures occur."
+  },
+  {
+    "id": 20,
+    "topic": "Monitoring",
+    "question": "What is a dashboard used for in monitoring?",
+    "options": [
+      "Visualizing metrics and system health in one place",
+      "Storing source code",
+      "Compiling Java programs",
+      "Blocking network traffic"
+    ],
+    "answerIndex": 0,
+    "explanation": "Dashboards show metrics and status at a glance to help spot trends and problems."
   }
 ]
