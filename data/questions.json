@@ -3,8 +3,13 @@
     "id": 1,
     "topic": "Git",
     "question": "What does git clone do?",
-    "options": ["Creates a local copy of a remote repo", "Deletes a branch", "Uploads commits", "Creates a merge conflict"],
+    "options": [
+      "Creates a local copy of a remote repository",
+      "Deletes a repository",
+      "Uploads files to GitHub",
+      "Creates a branch"
+    ],
     "answerIndex": 0,
-    "explanation": "git clone downloads a repository from a remote source to your computer."
+    "explanation": "git clone downloads a remote repository to your computer."
   }
 ]
